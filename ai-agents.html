@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 员工 · PASM Omni 霖通 —— 接待员与助手，答不上来就转人工</title>
+<meta name="description" content="PASM Omni AI 员工：AI 接待员 7×24 首响、AI 助手副驾坐席。反幻觉三重闸门，抽取式大脑不可能幻觉，可选 PASM 认知引擎。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">霖</span>PASM Omni <small>霖通</small></a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="ai-agents.html" class="on">AI 员工</a>
+      <a href="promotion.html">推广返现</a>
+      <a href="pricing.html">价格</a>
+      <a href="resources.html">资源</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost sm" href="resources.html">文档</a>
+      <a class="btn sm" href="pricing.html">免费开始</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:48px 0 40px">
+  <div class="wrap">
+    <span class="kicker">AI 员工</span>
+    <h1>两个 AI 角色，一条铁律<br><em>不知道就说不知道</em></h1>
+    <p class="sub">AI 接待员面对客户，AI 助手副驾坐席。它们共用同一条纪律：
+    反幻觉闸门不过，就转人工——宁可被投诉「慢」，不可被投诉「骗」。</p>
+  </div>
+</section>
+
+<section class="block" style="padding-top:24px">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🧑‍💼</div>
+        <h3>AI 接待员</h3>
+        <p>7×24 小时首响。访客进店自动接待，基于知识库作答；闸门不过立即转人工并生成交接摘要，
+        坐席点开就知道客户问过什么、AI 为什么答不上。</p>
+        <div class="tags"><span>自动应答</span><span>转人工</span><span>交接摘要</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>AI 助手（副驾）</h3>
+        <p>坐在坐席旁边：检索知识库给依据、推荐话术、生成建议回复。只读不发送——
+        每一次「对外」的动作都必须是人按下的。</p>
+        <div class="tags"><span>suggest_reply</span><span>search_knowledge</span><span>只读</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">核心机制</div>
+      <h2>反幻觉闸门：三道判定，不过即转人工</h2>
+      <p>这不是「让模型别胡说」的提示词工程，是结构上不可能的抽取式应答 + 三道硬判定。</p>
+    </div>
+
+    <svg viewBox="0 0 680 240" style="width:100%;max-width:720px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ah2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#185FA5"/>
+        </marker>
+        <marker id="ah3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#A32D2D"/>
+        </marker>
+      </defs>
+      <g font-family="inherit">
+        <!-- 客户消息 -->
+        <rect x="20" y="95" width="110" height="50" rx="9" fill="#fff" stroke="#6B7280"/>
+        <text x="75" y="115" font-size="12.5" font-weight="600" fill="#111827" text-anchor="middle">客户消息</text>
+        <text x="75" y="132" font-size="10.5" fill="#6B7280" text-anchor="middle">任意渠道</text>
+
+        <!-- 闸门1 -->
+        <rect x="175" y="30" width="150" height="62" rx="9" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+        <text x="250" y="54" font-size="12.5" font-weight="600" fill="#185FA5" text-anchor="middle">① 检索面命中</text>
+        <text x="250" y="71" font-size="10.5" fill="#6B7280" text-anchor="middle">FTS5 + 标签同义词</text>
+        <text x="250" y="85" font-size="10.5" fill="#6B7280" text-anchor="middle">无命中 → 直接转人工</text>
+
+        <!-- 闸门2 -->
+        <rect x="175" y="110" width="150" height="62" rx="9" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+        <text x="250" y="134" font-size="12.5" font-weight="600" fill="#185FA5" text-anchor="middle">② 置信度阈值</text>
+        <text x="250" y="151" font-size="10.5" fill="#6B7280" text-anchor="middle">命中强度 &lt; 0.25 → 转人工</text>
+        <text x="250" y="165" font-size="10.5" fill="#6B7280" text-anchor="middle">分数写入审计可溯源</text>
+
+        <!-- 闸门3 -->
+        <rect x="175" y="190" width="150" height="62" rx="9" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+        <text x="250" y="214" font-size="12.5" font-weight="600" fill="#854F0B" text-anchor="middle">③ 越界检测</text>
+        <text x="250" y="231" font-size="10.5" fill="#6B7280" text-anchor="middle">写代码/政治/医疗…拒答</text>
+        <text x="250" y="245" font-size="10.5" fill="#6B7280" text-anchor="middle">不进客服应答域</text>
+
+        <!-- 箭头 -->
+        <line x1="130" y1="120" x2="173" y2="70" stroke="#185FA5" stroke-width="1.4" marker-end="url(#ah2)"/>
+        <line x1="130" y1="120" x2="173" y2="140" stroke="#185FA5" stroke-width="1.4" marker-end="url(#ah2)"/>
+        <line x1="130" y1="120" x2="173" y2="215" stroke="#185FA5" stroke-width="1.4" marker-end="url(#ah2)"/>
+
+        <!-- 通过 -->
+        <rect x="380" y="110" width="120" height="56" rx="9" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+        <text x="440" y="133" font-size="12.5" font-weight="600" fill="#0F6E56" text-anchor="middle">抽取式应答</text>
+        <text x="440" y="150" font-size="10.5" fill="#6B7280" text-anchor="middle">引用知识库原文</text>
+
+        <!-- 转人工 -->
+        <rect x="380" y="30" width="120" height="56" rx="9" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.5"/>
+        <text x="440" y="53" font-size="12.5" font-weight="600" fill="#A32D2D" text-anchor="middle">转人工</text>
+        <text x="440" y="70" font-size="10.5" fill="#6B7280" text-anchor="middle">绝不编造</text>
+
+        <line x1="325" y1="140" x2="378" y2="138" stroke="#0F6E56" stroke-width="1.4" marker-end="url(#ah2)"/>
+        <path d="M 325 61 L 352 61 L 352 58" fill="none" stroke="#A32D2D" stroke-width="1.4" marker-end="url(#ah3)"/>
+        <path d="M 325 221 L 352 221 L 352 88" fill="none" stroke="#A32D2D" stroke-width="1.4" marker-end="url(#ah3)"/>
+        <line x1="325" y1="61" x2="378" y2="58" stroke="#A32D2D" stroke-width="1.4" marker-end="url(#ah3)"/>
+
+        <!-- PASM 认知引擎增强（企业版授权） -->
+        <rect x="540" y="95" width="120" height="70" rx="9" fill="#fff" stroke="#0F6E56" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="600" y="118" font-size="12" font-weight="600" fill="#0F6E56" text-anchor="middle">PASM 增强 · 授权</text>
+        <text x="600" y="135" font-size="10.5" fill="#6B7280" text-anchor="middle">PASM 闸门四件套</text>
+        <text x="600" y="149" font-size="10.5" fill="#6B7280" text-anchor="middle">+ 人格/情绪渲染</text>
+        <line x1="500" y1="138" x2="538" y2="138" stroke="#0F6E56" stroke-width="1.4" marker-end="url(#ah2)"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">双大脑</div>
+      <h2>一个可插拔的大脑层</h2>
+      <p>两种交付共用同一套壳，唯一分叉点在大脑。取得授权即启用，不引入就保持零依赖。</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:170px">维度</th><th>extractive（抽取式）</th><th>pasm_cs（PASM 认知）</th></tr></thead>
+        <tbody>
+          <tr><td>依赖</td><td>零第三方依赖（默认）</td><td>需 pasm-customer-service（企业版授权）</td></tr>
+          <tr><td>应答方式</td><td>直接引用知识库原文，结构上不可能幻觉</td><td>检索 + 人格/情绪渲染后生成</td></tr>
+          <tr><td>闸门</td><td>三重：检索面 / 置信度 / 越界</td><td>四件套：select_knowledge / touches_surface / semantic_tokens / retrieval_surface</td></tr>
+          <tr><td>置信度</td><td>0.00–1.00 精确分值，写入审计</td><td>框架不暴露逐次分值，诚实显示 n/a</td></tr>
+          <tr><td>知识来源</td><td>omni 知识表（FTS5）</td><td>omni 知识表经 ingest_faq 同步（空 kb_dir 隔离 Demo 语料）</td></tr>
+          <tr><td>启用方式</td><td>—</td><td>企业版授权后，以 <code>--brain auto</code> 切换</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note" id="pasm">
+      <b>已实测确认的边界（不吹超）：</b>
+      ① pasm_cs 的 ask() 只回文本，不暴露逐次置信度，所以分值诚实显示 n/a；
+      ② 默认配置下它不记忆客户口述信息（「我叫王小美」后再问「我叫什么」会答查无资料），
+      客户资产沉淀靠 omni 自己的存储层；③ 不传空 kb_dir 时它会自带一套 Demo 知识导致答非所问，
+      必须隔离。这三条都写在代码注释与测试里，不是营销话术。
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">对照</div>
+      <h2>与全渠道 SaaS 的 AI 员工相比</h2>
+    </div>
+    <div class="vs">
+      <div class="col us">
+        <h3>🟢 PASM Omni</h3>
+        <ul class="check-list">
+          <li>可私有化：数据在自己机器上，单文件 SQLite</li>
+          <li>零依赖可选：纯标准库实现，断网可用</li>
+          <li>MCP 原生：整个系统是 30 个工具，AI 客户端直接编排</li>
+          <li>闸门与审计全透明：每次判定的分值、原因、大脑名都落链</li>
+          <li>中文场景定制：渠道、话术、报表按国内业务打磨</li>
+        </ul>
+      </div>
+      <div class="col them">
+        <h3>⚪ 全渠道 SaaS（SaleSmartly 类）</h3>
+        <ul class="check-list">
+          <li>渠道最全：14 个海外渠道靠 Meta 等官方资质换来</li>
+          <li>开箱即用：注册即用，无需任何部署</li>
+          <li>AI 功能深：AI 积分体系、AI 成员消息额度等成熟商品化</li>
+          <li>数据在厂商云上，客户资产沉淀在坐席个人账号里</li>
+          <li>定制需跟随厂商路线图</li>
+        </ul>
+      </div>
+    </div>
+    <p class="center mt20" style="color:var(--sub);font-size:13.5px">
+      我们的立场：不跟巨头拼渠道资质，拼「可私有化 + 零依赖 + MCP 原生」这个他们结构性给不出的组合。
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="cta-bar">
+      <h2>让 AI 先接第一班</h2>
+      <p>seed 灌入知识 → serve 起服务 → 挂件上站，今晚就能接待客户。</p>
+      <a class="btn" href="pricing.html">立即开始</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>PASM Omni · 霖通</h4>
+        <p class="about">外接式客户系统内核。渠道即插即用，答不上来就转人工。
+        私有化交付，零第三方依赖。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="products.html">功能矩阵</a></li>
+          <li><a href="solutions.html">独立站智能导购</a></li>
+          <li><a href="ai-agents.html">AI 员工</a></li>
+          <li><a href="pricing.html">价格方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>资源</h4>
+        <ul>
+          <li><a href="resources.html">帮助文档</a></li>
+          <li><a href="resources.html#api">API 参考</a></li>
+          <li><a href="resources.html#security">安全与合规</a></li>
+          <li><a href="promotion.html">推广返现</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>生态</h4>
+        <ul>
+          <li><a href="https://github.com/arronJack/pasm-omni" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/arronzheng/pasm-omni" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="ai-agents.html#pasm">PASM 认知引擎</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 PASM 生态 · arronzheng</span>
+      <span>数据全部本地存储 · 单文件 SQLite · 可私有化部署</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

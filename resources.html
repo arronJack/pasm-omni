@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>资源中心 · PASM Omni 霖通 —— 文档 / API / 安全 / 下载</title>
+<meta name="description" content="PASM Omni 资源中心：快速开始、CLI 命令速查、REST API 与 MCP 30 工具参考、双版本策略、安全与合规说明、下载与常见问题。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">霖</span>PASM Omni <small>霖通</small></a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="ai-agents.html">AI 员工</a>
+      <a href="promotion.html">推广返现</a>
+      <a href="pricing.html">价格</a>
+      <a href="resources.html" class="on">资源</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost sm" href="resources.html">文档</a>
+      <a class="btn sm" href="pricing.html">免费开始</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:48px 0 36px">
+  <div class="wrap">
+    <span class="kicker">资源中心</span>
+    <h1>文档、API、安全<br>全部<em>公开可查</em></h1>
+    <p class="sub">从三分钟上手指南，到 REST API 与 MCP 工具契约，再到安全设计与诚实的竞品对照——
+    先评审，再决定。</p>
+  </div>
+</section>
+
+<!-- ============ 帮助文档 ============ -->
+<section class="block" style="padding-top:20px">
+  <div class="wrap">
+    <div class="res-grid">
+      <div class="res-card">
+        <h3>📘 帮助文档</h3>
+        <ul>
+          <li><a href="index.html">产品总览与界面预览</a></li>
+          <li><a href="products.html">功能矩阵（逐项能力对照）</a></li>
+          <li><a href="solutions.html">独立站智能导购方案</a></li>
+          <li><a href="ai-agents.html">AI 员工与大脑层</a></li>
+          <li><a href="docs/功能介绍.md">功能介绍（详细）</a></li>
+          <li><a href="docs/接入指南.md">接入指南（挂件 / 订单 / MCP）</a></li>
+          <li><a href="docs/FAQ.md">常见问题</a></li>
+          <li><a href="resources.html#api">接口速查</a></li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>⌨️ CLI 命令速查</h3>
+        <ul>
+          <li><span class="doc">serve</span> 启动 HTTP 服务（工作台 + 挂件）</li>
+          <li><span class="doc">serve-mcp</span> 以 MCP stdio 服务运行</li>
+          <li><span class="doc">seed</span> 灌入示例知识 / 话术 / 规则</li>
+          <li><span class="doc">demo</span> 端到端演示（自动应答 vs 转人工）</li>
+          <li><span class="doc">channels</span> 渠道列表与健康度</li>
+          <li><span class="doc">brain</span> 查看当前大脑与 PASM 可用性</li>
+          <li><span class="doc">status</span> 系统状态总览</li>
+          <li><span class="doc">grant / revoke</span> 工具授权管理</li>
+          <li><span class="doc">verify</span> 校验审计链完整性</li>
+          <li><span class="doc">sla-check</span> SLA 惰性扫描（首响 / 人工处理超时）</li>
+          <li><span class="doc">wecom</span> 配置 / 查看企业微信渠道（corpid / agentid / secret / token / aeskey）</li>
+          <li><span class="doc">templates</span> 消息模板与审核态：list / add / submit / approve / reject / render</li>
+          <li><span class="doc">orders</span> 订单打通：enable / list / lookup / add / stats</li>
+                    <li><span class="doc">link-add / link-list</span> 分流链接（活码）管理</li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>⬇️ 下载与获取</h3>
+        <ul>
+          <li><a href="https://github.com/arronJack/pasm-omni" target="_blank" rel="noopener">GitHub · 项目主页</a></li>
+          <li><a href="https://gitee.com/arronzheng/pasm-omni" target="_blank" rel="noopener">Gitee · 国内镜像</a></li>
+          <li><a href="pricing.html">商业版 · 联系开通</a></li>
+          <li><a href="promotion.html">推广资料包 · 索取</a></li>
+        </ul>
+        <p style="font-size:12.5px;color:var(--sub);margin-top:10px">商业版以加密分发 + 授权码交付，含部署文档与首次远程实施。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ API 参考 ============ -->
+<section class="block alt" id="api">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">API 参考</div>
+      <h2>REST 端点 + MCP 工具</h2>
+      <p>全部能力 HTTP 化；同时整个系统是一个 MCP 服务。默认绑定 127.0.0.1，CORS 开放供前端集成。</p>
+    </div>
+
+    <h3 style="font-size:15px;margin:22px 0 10px">REST API</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:230px">端点</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td><code>POST /api/chat</code></td><td>访客发消息（挂件入口，含频控 20 条/分钟）</td></tr>
+          <tr><td><code>POST /inbound/passthrough</code></td><td>通用外接口：任何系统 POST JSON 即接入</td></tr>
+          <tr><td><code>POST /api/claim</code></td><td>坐席抢单（原子，防撞单）</td></tr>
+          <tr><td><code>POST /api/reply</code></td><td>坐席人工回复（投递到渠道侧 external_id）</td></tr>
+          <tr><td><code>POST /api/close</code></td><td>关闭会话（终态）</td></tr>
+          <tr><td><code>POST /api/handover</code></td><td>交接摘要（客户档案 + 历史 + 闸门结论 + 轨迹）</td></tr>
+          <tr><td><code>POST /api/transfer</code></td><td>人工态会话转接给其他坐席</td></tr>
+          <tr><td><code>POST /api/note</code></td><td>写内部备注（对客户不可见）</td></tr>
+          <tr><td><code>POST /api/sla/check</code></td><td>SLA 惰性扫描（首响/人工处理超时）</td></tr>
+          <tr><td><code>GET /api/templates</code></td><td>模板列表与状态统计</td></tr>
+          <tr><td><code>POST /api/templates</code></td><td>新建模板（draft）</td></tr>
+          <tr><td><code>POST /api/templates/submit</code></td><td>提交审核（draft/rejected → pending）</td></tr>
+          <tr><td><code>POST /api/templates/review</code></td><td>审核结论（<b>仅 admin</b>：approved / rejected）</td></tr>
+          <tr><td><code>POST /api/templates/render</code></td><td>试渲染模板（预览变量替换）</td></tr>
+          <tr><td><code>POST /inbound/shopify</code></td><td>Shopify 订单 webhook（HMAC 验签）</td></tr>
+          <tr><td><code>POST /inbound/woocommerce</code></td><td>WooCommerce 订单 webhook（HMAC 验签）</td></tr>
+          <tr><td><code>POST /inbound/orders/{source}</code></td><td>通用订单 webhook（base64 或 hex 签名）</td></tr>
+          <tr><td><code>GET /api/orders</code></td><td>订单列表与统计（agent 级）</td></tr>
+          <tr><td><code>GET /api/orders/lookup</code></td><td>按单号 / 客户查订单（agent 级）</td></tr>
+          <tr><td><code>POST /api/orders</code></td><td>手动/ERP 写入订单（<b>仅 admin</b>）</td></tr>
+          <tr><td><code>GET /api/conversations</code></td><td>会话列表（按状态/坐席/渠道筛选）</td></tr>
+          <tr><td><code>GET /api/conversation?id=</code></td><td>会话详情与消息（挂件轮询）</td></tr>
+          <tr><td><code>GET/POST /api/canned…</code></td><td>话术库：列表 / 搜索 / 新增 / 删除 / 一键发送</td></tr>
+          <tr><td><code>POST /api/rate</code></td><td>服务评价（1-5 星 + 文字，可改判）</td></tr>
+          <tr><td><code>POST /api/track</code></td><td>访客轨迹上报（external_id 自动解析建档）</td></tr>
+          <tr><td><code>GET /api/visitors</code></td><td>访客轨迹时间线</td></tr>
+          <tr><td><code>GET /api/analytics</code></td><td>数据报表（应答率/首响/满意度/分布）</td></tr>
+          <tr><td><code>GET /api/contacts</code></td><td>客户列表（按分层/标签筛选）</td></tr>
+          <tr><td><code>POST /api/contact/tag|tier|untag</code></td><td>客户标签与分层管理</td></tr>
+          <tr><td><code>GET /api/knowledge</code></td><td>知识库列表</td></tr>
+          <tr><td><code>POST /api/ingest</code></td><td>新增知识</td></tr>
+          <tr><td><code>POST /api/broadcast</code></td><td>群发（多重闸门：总开关/授权/opt-in/频控/退订）</td></tr>
+          <tr><td><code>GET /api/audit</code></td><td>审计查询（?verify=1 自校验 hash 链）</td></tr>
+          <tr><td><code>GET /api/status · /api/channels · /api/grants</code></td><td>状态 / 渠道健康 / 授权列表</td></tr>
+          <tr><td><code>GET /api/events</code></td><td>SSE 实时推送（坐席工作台订阅）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:15px;margin:26px 0 10px">MCP 工具（30 个，stdio 协议）</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:230px">工具</th><th>用途</th><th class="center" style="width:90px">风险级</th></tr></thead>
+        <tbody>
+          <tr><td><code>inbound_message</code></td><td>投喂入站消息，返回闸门判定</td><td class="center">低</td></tr>
+          <tr><td><code>suggest_reply</code></td><td>交接摘要与建议话术（只读）</td><td class="center">低</td></tr>
+          <tr><td><code>search_knowledge</code></td><td>知识检索 + 大脑判定（走当前大脑）</td><td class="center">低</td></tr>
+          <tr><td><code>get_contact</code></td><td>客户档案</td><td class="center">低</td></tr>
+          <tr><td><code>list_conversations</code></td><td>会话列表</td><td class="center">低</td></tr>
+          <tr><td><code>list_canned_replies</code></td><td>话术库列表</td><td class="center">低</td></tr>
+          <tr><td><code>analytics_summary</code></td><td>数据报表</td><td class="center">低</td></tr>
+          <tr><td><code>audit_query</code></td><td>审计查询与链校验</td><td class="center">低</td></tr>
+          <tr><td><code>reply</code></td><td>坐席回复（对外动作）</td><td class="center" style="color:var(--red)">高</td></tr>
+          <tr><td><code>send_canned_reply</code></td><td>一键发话术（对外动作）</td><td class="center" style="color:var(--red)">高</td></tr>
+          <tr><td><code>send_broadcast</code></td><td>群发（默认禁用 + 多重闸门）</td><td class="center" style="color:var(--red)">最高</td></tr>
+          <tr><td><code>ingest_knowledge</code></td><td>新增知识</td><td class="center">中</td></tr>
+          <tr><td><code>upsert_contact</code></td><td>建档 / 打标签</td><td class="center">中</td></tr>
+          <tr><td><code>claim_conversation</code></td><td>抢单</td><td class="center">中</td></tr>
+          <tr><td><code>escalate</code></td><td>转人工 + 交接摘要</td><td class="center">中</td></tr>
+          <tr><td><code>rate_conversation</code></td><td>服务评价</td><td class="center">中</td></tr>
+          <tr><td><code>set_contact_tier</code></td><td>客户分层调整</td><td class="center">中</td></tr>
+          <tr><td><code>track_visitor_event</code></td><td>访客轨迹上报</td><td class="center">中</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">标注「高 / 最高」的工具遵循<b>权限默认拒绝</b>原则：未经管理员显式授权即拒绝执行，且拒绝动作本身也写入审计链。</div>
+  </div>
+</section>
+
+<!-- ============ 安全 ============ -->
+<section class="block" id="security">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">安全与合规</div>
+      <h2>数据在你手里，动作可追溯</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🔗</div>
+        <h3>审计 hash 链</h3>
+        <p>所有操作追加写入并链式 hash。篡改或删除任意一条，全链校验即时失败并定位断点——
+        测试里实测可检出。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🚪</div>
+        <h3>权限默认拒绝</h3>
+        <p>工具级 RBAC：高危动作未显式授权即拒。没有「默认开放」这回事，拒绝也留痕。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔒</div>
+        <h3>越权防护（读写分离）</h3>
+        <p>读接口与写接口<strong>同样要求身份</strong>：客户名单、访客轨迹、经营报表、会话列表、
+        知识库、审计日志、SSE 实时事件在开启账号体系后无 token 一律 401。
+        角色分 viewer / agent / admin 三级，审核权与提交权分离（agent 不能审自己的模板）。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📵</div>
+        <h3>群发合规硬约束</h3>
+        <p>群发总开关默认关闭；必须显式确认收件人已同意（opt-in）；频控 + 退订名单双重兜底。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏠</div>
+        <h3>数据私有</h3>
+        <p>单文件 SQLite，无云端同步通道，无遥测。默认只绑 127.0.0.1；对外暴露由你的反代决定。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 诚实对照 ============ -->
+<section class="block alt" id="compare">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">诚实对照</div>
+      <h2>与 SaleSmartly 公开能力逐项对照</h2>
+      <p>参考对象：SaleSmartly（全渠道私域 SaaS，Meta 官方合作伙伴）。我们逐项比，不回避差距。</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:180px">维度</th><th>SaleSmartly</th><th>PASM Omni</th></tr></thead>
+        <tbody>
+          <tr><td>渠道广度</td><td>14 个海外官方渠道（Meta 资质）</td><td>内置 5 个（网页挂件 / Email / Telegram / 企业微信 / 通用外接口）+ 注册表无限扩展；Meta 系渠道靠 BSP 挂靠（协助办理）</td></tr>
+          <tr><td>部署形态</td><td>SaaS 云服务</td><td>私有化 / 单机 / 容器，数据不出机房</td></tr>
+          <tr><td>计费模式</td><td>按坐席 + 消息量 + AI 积分</td><td>按坐席规模与渠道深度，不限消息量</td></tr>
+          <tr><td>AI 员工</td><td>AI 机器人托管 + AI 成员消息额度</td><td>AI 接待员 + AI 助手；反幻觉闸门透明可溯</td></tr>
+          <tr><td>SCRM</td><td>客户标签/分层/订单跟进/商品管理</td><td>标签/分层/访客轨迹/自动规则；订单商品管理为规划中</td></tr>
+          <tr><td>数据资产归属</td><td>厂商云上，坐席个人账号沉淀</td><td>企业本地单文件库，资产完全自有</td></tr>
+          <tr><td>AI 客户端调用</td><td>API / Webhook</td><td>REST + MCP 30 工具（可被 AI 直接编排）</td></tr>
+          <tr><td>源码</td><td>不公开（签约可授权）</td><td>不公开</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="good">
+      <b>结论：</b>拼渠道资质与开箱即用，我们不如它；拼「可私有化 + 零依赖 + MCP 原生 + 中文场景」，
+      这是它结构性给不出的组合。按需选择，我们都给了免费入口。
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><div class="tag">常见问题</div><h2>技术问题快速答案</h2></div>
+    <div class="faq">
+      <details open>
+        <summary>真的零第三方依赖吗？</summary>
+        <div class="a">免费版与商业版都是：只用 Python 标准库（sqlite3 / http.server / hashlib / json），Python 3.11+ 即可运行。CI 里有静态扫描守门：包内任何顶层 import pasm 都会让测试失败。</div>
+      </details>
+      <details>
+        <summary>579 项守门测试是什么？</summary>
+        <div class="a">四套自动化测试：端到端 46 项（渠道/状态机/闸门/审计）、大脑层 34 项（含 PASM 真实集成）、功能补强 37 项（本轮全部 bug 修复与新功能）、HTTP 层 48 项（真实服务全链路）。全部退出码 0。</div>
+      </details>
+      <details>
+        <summary>MCP 客户端怎么接？</summary>
+        <div class="a">在 MCP 客户端配置里启动 <code>pasm-omni --db omni.db serve-mcp</code>，initialize 后即可见 30 个工具。高危工具先用 CLI grant 授权。</div>
+      </details>
+      <details>
+        <summary>数据库能迁到 PostgreSQL 吗？</summary>
+        <div class="a">当前存储层为 SQLite 单文件（FTS5 内置）。存储访问全部收敛在 store.py，换库只需替换该层；多租户 SaaS 化在路线图上，不在内核范围。</div>
+      </details>
+      <details>
+        <summary>挂件会影响站点性能吗？</summary>
+        <div class="a">挂件为单文件原生 JS（无框架、无依赖），约 10KB；轮询仅在面板打开时进行，关闭即停。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>PASM Omni · 霖通</h4>
+        <p class="about">外接式客户系统内核。渠道即插即用，答不上来就转人工。
+        私有化交付，零第三方依赖。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="products.html">功能矩阵</a></li>
+          <li><a href="solutions.html">独立站智能导购</a></li>
+          <li><a href="ai-agents.html">AI 员工</a></li>
+          <li><a href="pricing.html">价格方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>资源</h4>
+        <ul>
+          <li><a href="resources.html">帮助文档</a></li>
+          <li><a href="resources.html#api">API 参考</a></li>
+          <li><a href="resources.html#security">安全与合规</a></li>
+          <li><a href="promotion.html">推广返现</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>生态</h4>
+        <ul>
+          <li><a href="https://github.com/arronJack/pasm-omni" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/arronzheng/pasm-omni" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="ai-agents.html#pasm">PASM 认知引擎</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 PASM 生态 · arronzheng</span>
+      <span>数据全部本地存储 · 单文件 SQLite · 可私有化部署</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

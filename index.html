@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PASM Omni 霖通 · 外接式客户系统 —— 渠道即插即用，答不上来就转人工</title>
+<meta name="description" content="PASM Omni（霖通）是外接式客户系统内核：全渠道接入、统一收件箱、AI 员工、反幻觉闸门、SCRM 客户资产、话术库、数据报表、审计链，MCP 原生，可私有化部署。私有化交付，零第三方依赖。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">霖</span>PASM Omni <small>霖通</small></a>
+    <div class="nav-links">
+      <a href="index.html" class="on">首页</a>
+      <a href="products.html">产品</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="ai-agents.html">AI 员工</a>
+      <a href="promotion.html">推广返现</a>
+      <a href="pricing.html">价格</a>
+      <a href="resources.html">资源</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost sm" href="resources.html">文档</a>
+      <a class="btn sm" href="pricing.html">免费开始</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">外接式客户系统 · 私有化部署 / 零第三方依赖</span>
+    <h1>把客户系统<em>插</em>到任何业务上<br>答不上来，就转人工</h1>
+    <p class="sub">PASM Omni 是一个可私有化部署的客户系统内核：网页挂件一行代码接入任意站点，
+    外部系统一条 HTTP 请求即成为新渠道。反幻觉闸门保证 AI 只说知识库里有的内容，
+    全链路审计 hash 链保证每一条消息可溯源。整个系统同时是一个 MCP 服务，可被
+    WorkBuddy / Claude / Cursor 直接调用。</p>
+    <div class="cta">
+      <a class="btn" href="pricing.html">查看价格方案</a>
+      <a class="btn ghost" href="solutions.html">独立站智能导购方案 →</a>
+    </div>
+    <div class="code">
+      <span class="c"># 私有化交付：解压即用，装到任何有 Python 的机器上</span><br>
+      <span class="g">$</span> pasm-omni --db omni.db seed &amp;&amp; pasm-omni --db omni.db serve<br>
+      <span class="c"># 零第三方依赖 · 数据不出内网 · 单文件数据库</span><br>
+      <span class="c"># 企业版可选接入 PASM 认知引擎（授权），闸门升级为四件套</span>
+    </div>
+
+    <div class="editions">
+      <div class="edition">
+        <h3><span class="pill free">免费版</span>自托管 · ¥0</h3>
+        <p>免费部署到你自己的服务器，功能完整、<b>零第三方依赖</b>（纯 Python 标准库）。
+        单文件数据库，数据完全私有。适合先跑起来验证效果。</p>
+      </div>
+      <div class="edition">
+        <h3><span class="pill oss">商业版</span>私有化交付</h3>
+        <p>商业授权交付，含技术支持、渠道资质协助、PASM 认知大脑授权与深度定制。
+        源码不随公开发布，交付方式另议。适合正式商用的企业客户。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 数据条 ============ -->
+<div class="stats">
+  <div class="wrap">
+    <div><div class="n">579</div><div class="l">项守门测试全绿</div></div>
+    <div><div class="n">0</div><div class="l">第三方依赖（标准库实现）</div></div>
+    <div><div class="n">30</div><div class="l">个 MCP 工具直接调用</div></div>
+    <div><div class="n">5</div><div class="l">内置渠道，外接不限</div></div>
+  </div>
+</div>
+
+<!-- ============ 能力总览 ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">能力总览</div>
+      <h2>一个内核，七层能力</h2>
+      <p>渠道层、会话层、大脑层、资产层、营销层、数据层、治理层——各层可独立替换，加渠道不改一行内核。</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🔌</div>
+        <h3>全渠道接入</h3>
+        <p>网页挂件、Email、Telegram、<b>企业微信</b>、通用外接口内置；自定义渠道注册即用，第三方包可独立发版。</p>
+        <div class="tags"><span>webchat</span><span>email</span><span>telegram</span><span>passthrough</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">📥</div>
+        <h3>统一收件箱</h3>
+        <p>所有渠道汇到一个工作台。坐席抢单防撞单、交接摘要自动生成、会话状态机全程可观测。</p>
+        <div class="tags"><span>原子抢单</span><span>交接摘要</span><span>SSE 实时</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>AI 员工</h3>
+        <p>AI 接待员 7×24 首响，AI 助手副驾坐席。反幻觉三重闸门：检索面 → 置信度 → 越界检测。</p>
+        <div class="tags"><span>extractive 大脑</span><span>pasm_cs 大脑</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>反幻觉闸门</h3>
+        <p>答不上来就转人工，绝不编造。抽取式应答直接引用知识库原文，不可能说出库里没有的内容。</p>
+        <div class="tags"><span>越界拒答</span><span>score 可溯</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">👤</div>
+        <h3>SCRM 客户资产</h3>
+        <p>标签体系、客户分层（VIP/沉默/流失风险）、访客轨迹、自动标签规则，入站即打标。</p>
+        <div class="tags"><span>标签</span><span>分层</span><span>轨迹</span><span>规则引擎</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">💬</div>
+        <h3>话术库与服务评价</h3>
+        <p>坐席快捷回复一键发送、使用次数统计；会话级满意度评价（CSAT），可改判。</p>
+        <div class="tags"><span>话术库</span><span>CSAT</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>数据报表</h3>
+        <p>AI 应答率、平均首响、满意度、会话/客户分布、今日消息量——工作台看板实时可见。</p>
+        <div class="tags"><span>看板</span><span>SQL 聚合</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>治理与审计</h3>
+        <p>审计 hash 链（改一条即全链暴露）、工具级 RBAC 默认拒绝、群发多重合规闸门。</p>
+        <div class="tags"><span>hash 链</span><span>默认拒绝</span><span>退订名单</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 界面预览 ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">界面预览</div>
+      <h2>真实界面，不是效果图</h2>
+      <p>以下截图均来自实际运行的系统——左边是坐席工作台，右边是访客在任意网站上看到的挂件。</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="screenshots/console-workbench.png" alt="PASM Omni 运营工作台" loading="lazy">
+        <figcaption><b>坐席工作台</b>　统一收件箱、抢单、交接摘要、订单与数据报表一屏在手</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="screenshots/widget-chat.png" alt="网页挂件访客对话" loading="lazy">
+        <figcaption><b>访客挂件</b>　一行 script 嵌入任意站点，答不上来即转人工</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 接入方式 ============ -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">接入方式</div>
+      <h2>三种外接姿势，从紧到松</h2>
+      <p>不必替换你现有的客服系统——只把 AI 能力挂上去。</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">1️⃣</div>
+        <h3>继承 Channel 注册</h3>
+        <p>实现 normalize / send / health 三个方法，一行 register() 即成为正式渠道，内核零改动。</p>
+      </div>
+      <div class="card">
+        <div class="icon">2️⃣</div>
+        <h3>load_external 第三方包</h3>
+        <p>渠道可独立打成 pip 包、独立发版，主程序运行时加载，渠道生态与内核解耦。</p>
+      </div>
+      <div class="card">
+        <div class="icon">3️⃣</div>
+        <h3>passthrough 通用外接口</h3>
+        <p>任何语言、任何已有系统，POST 一条 JSON {channel, external_id, text} 即接入；出站可配转发地址。</p>
+      </div>
+    </div>
+    <div class="note center mt20">
+      📎 挂件接入只要一行：<code>&lt;script src="https://你的服务器/widget.js" data-api="https://你的服务器"&gt;&lt;/script&gt;</code>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 快速开始 ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">快速开始</div>
+      <h2>三分钟跑起来</h2>
+    </div>
+    <div class="grid2">
+      <div>
+        <ul class="check-list">
+          <li>部署：解压交付包 → <code>pasm-omni --db omni.db serve</code>（零依赖）</li>
+          <li>灌入示例知识：<code>pasm-omni --db omni.db seed</code></li>
+          <li>起服务：<code>pasm-omni --db omni.db serve</code></li>
+          <li>打开坐席工作台：<b>http://127.0.0.1:8770/</b></li>
+          <li>把 widget.js 嵌到你的站点，访客即可对话</li>
+          <li>起 MCP 服务：<code>pasm-omni --db omni.db serve-mcp</code>，AI 客户端直接调用 30 个工具</li>
+        </ul>
+      </div>
+      <pre class="code"><span class="cm"># 一条命令验证整条链路（演示模式）</span>
+<span class="g">$</span> pasm-omni --db omni.db demo
+
+<span class="cm"># 输出示例</span>
+这个能退货吗     自动应答  0.75
+    → 签收后 7 天内可无理由退货…
+你们老板是谁    转人工    0.00
+    → 这个问题我需要确认一下，正在为你转接人工客服。
+
+<span class="cm"># 校验审计链完整性</span>
+<span class="g">$</span> pasm-omni --db omni.db verify
+{ <span class="st">"ok"</span>: true, <span class="st">"total"</span>: 42 }</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="cta-bar">
+      <h2>先评审，再决定</h2>
+      <p>完整设计文档、规格契约与 579 项守门测试（可现场核验）。</p>
+      <a class="btn" href="resources.html">进入资源中心</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>PASM Omni · 霖通</h4>
+        <p class="about">外接式客户系统内核。渠道即插即用，答不上来就转人工。
+        私有化交付，零第三方依赖。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="products.html">功能矩阵</a></li>
+          <li><a href="solutions.html">独立站智能导购</a></li>
+          <li><a href="ai-agents.html">AI 员工</a></li>
+          <li><a href="pricing.html">价格方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>资源</h4>
+        <ul>
+          <li><a href="resources.html">帮助文档</a></li>
+          <li><a href="resources.html#api">API 参考</a></li>
+          <li><a href="resources.html#security">安全与合规</a></li>
+          <li><a href="promotion.html">推广返现</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>生态</h4>
+        <ul>
+          <li><a href="https://github.com/arronJack/pasm-omni" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/arronzheng/pasm-omni" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="ai-agents.html#pasm">PASM 认知引擎</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 PASM 生态 · arronzheng</span>
+      <span>数据全部本地存储 · 单文件 SQLite · 可私有化部署</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

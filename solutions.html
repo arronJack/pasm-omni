@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>解决方案 · 独立站智能导购 —— PASM Omni 霖通</title>
+<meta name="description" content="独立站智能导购方案：访客进店挂件自动接待，AI 导购基于知识库作答，答不上转人工，坐席接管成交跟进。三种接入方式，支持私有化部署。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">霖</span>PASM Omni <small>霖通</small></a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品</a>
+      <a href="solutions.html" class="on">解决方案</a>
+      <a href="ai-agents.html">AI 员工</a>
+      <a href="promotion.html">推广返现</a>
+      <a href="pricing.html">价格</a>
+      <a href="resources.html">资源</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost sm" href="resources.html">文档</a>
+      <a class="btn sm" href="pricing.html">免费开始</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:48px 0 40px">
+  <div class="wrap">
+    <span class="kicker">解决方案 · 独立站智能导购</span>
+    <h1>访客进店即接待<br><em>答不上来，才叫人</em></h1>
+    <p class="sub">独立站最大的成本不是流量，是「问了三句没人回」的流失。PASM Omni 把导购机器人、
+    人工坐席、客户资产装进同一个内核：AI 先接，接不住的转人工，全程留痕，数据在自己手里。</p>
+  </div>
+</section>
+
+<section class="block" style="padding-top:24px">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">服务链路</div>
+      <h2>从进店到成交的五步闭环</h2>
+    </div>
+
+    <svg viewBox="0 0 680 190" style="width:100%;max-width:760px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#185FA5"/>
+        </marker>
+      </defs>
+      <!-- 节点 -->
+      <g font-family="inherit" text-anchor="middle">
+        <rect x="10" y="55" width="112" height="80" rx="10" fill="#fff" stroke="#185FA5" stroke-width="1.5"/>
+        <text x="66" y="80" font-size="13" font-weight="600" fill="#111827">访客进店</text>
+        <text x="66" y="98" font-size="10.5" fill="#6B7280">挂件自动弹出</text>
+        <text x="66" y="113" font-size="10.5" fill="#6B7280">轨迹开始记录</text>
+
+        <rect x="152" y="55" width="112" height="80" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+        <text x="208" y="80" font-size="13" font-weight="600" fill="#185FA5">AI 导购接待</text>
+        <text x="208" y="98" font-size="10.5" fill="#6B7280">7×24 首响</text>
+        <text x="208" y="113" font-size="10.5" fill="#6B7280">知识库抽取作答</text>
+
+        <rect x="294" y="55" width="112" height="80" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+        <text x="350" y="80" font-size="13" font-weight="600" fill="#854F0B">闸门判定</text>
+        <text x="350" y="98" font-size="10.5" fill="#6B7280">检索面+置信度</text>
+        <text x="350" y="113" font-size="10.5" fill="#6B7280">+越界检测</text>
+
+        <rect x="436" y="55" width="112" height="80" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+        <text x="492" y="80" font-size="13" font-weight="600" fill="#0F6E56">坐席接管</text>
+        <text x="492" y="98" font-size="10.5" fill="#6B7280">抢单+交接摘要</text>
+        <text x="492" y="113" font-size="10.5" fill="#6B7280">话术库提效</text>
+
+        <rect x="579" y="55" width="92" height="80" rx="10" fill="#fff" stroke="#0F6E56" stroke-width="1.5"/>
+        <text x="624" y="80" font-size="13" font-weight="600" fill="#111827">评价收官</text>
+        <text x="624" y="98" font-size="10.5" fill="#6B7280">CSAT 五星</text>
+        <text x="624" y="113" font-size="10.5" fill="#6B7280">资产沉淀</text>
+
+        <!-- 箭头 -->
+        <line x1="122" y1="95" x2="150" y2="95" stroke="#185FA5" stroke-width="1.5" marker-end="url(#ah)"/>
+        <line x1="264" y1="95" x2="292" y2="95" stroke="#185FA5" stroke-width="1.5" marker-end="url(#ah)"/>
+        <line x1="406" y1="95" x2="434" y2="95" stroke="#185FA5" stroke-width="1.5" marker-end="url(#ah)"/>
+        <line x1="548" y1="95" x2="576" y2="95" stroke="#185FA5" stroke-width="1.5" marker-end="url(#ah)"/>
+        <!-- 回环：解决后回到 AI -->
+        <path d="M 350 135 L 350 165 L 208 165 L 208 137" fill="none" stroke="#0F6E56" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+        <text x="279" y="180" font-size="10.5" fill="#0F6E56">闸门通过 → 直接作答（不进人工队列）</text>
+        <text x="350" y="45" font-size="10.5" fill="#854F0B" text-anchor="middle">不通过 → 转人工（绝不编造）</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">场景价值</div>
+      <h2>独立站导购的四个真实痛点，逐个拆掉</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">⏱️</div>
+        <h3>夜间咨询没人回</h3>
+        <p>AI 接待员 7×24 首响。WhatsApp 2026 年 10 月起 24 小时窗口内服务消息也计费——
+        快速自动回复不只是省人力，是直接省钱。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>答非所问赶走客户</h3>
+        <p>反幻觉闸门：只回答知识库里有的内容，答不上来明确转人工。
+        抽取式大脑结构上不可能幻觉。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>客户资产散落个人</h3>
+        <p>SaaS 客服的资产在坐席个人账号里。PASM Omni 单文件数据库放在你自己机器上，
+        标签、分层、轨迹、会话史全部是企业私有资产。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔌</div>
+        <h3>已有系统不敢换</h3>
+        <p>不必替换现有客服系统。passthrough 外接口一条 JSON 即接入，
+        或把 widget.js 直接嵌到站点——AI 能力挂上去就行。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">三种接入</div>
+      <h2>按你现有的家当选姿势</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:150px">方式</th><th>做法</th><th>适合谁</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>① 挂件嵌入</b></td>
+            <td>站点加一行 <code>&lt;script src=".../widget.js"&gt;</code>，浮动聊天窗即插即用，自动上报访客轨迹、支持满意度评价</td>
+            <td>有独立站/官网，想最快上线</td>
+          </tr>
+          <tr>
+            <td><b>② passthrough 外接</b></td>
+            <td>既有客服系统 POST <code>{channel, external_id, text}</code> 到 <code>/inbound/passthrough</code>；出站配 <code>forward_url</code> 转发回原系统</td>
+            <td>已有收件箱，只加 AI 能力</td>
+          </tr>
+          <tr>
+            <td><b>③ 自定义渠道</b></td>
+            <td>实现 normalize/send/health 注册为正式渠道，或打成第三方 pip 包独立发版</td>
+            <td>要接抖音/微信/自有 App 等专属渠道</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block-head mt30">
+      <div class="tag">部署形态</div>
+      <h2>一台机器就能跑</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>单机部署</h3>
+        <p>任意有 Python 3.11+ 的机器。SQLite 单文件 = 部署即备份。零第三方依赖，断网可用。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏢</div>
+        <h3>私有化部署</h3>
+        <p>放进企业内网，客户数据不出境不出机房。默认只绑 127.0.0.1，反代暴露由你掌控。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🐳</div>
+        <h3>容器化</h3>
+        <p>标准库实现、无外部服务依赖，打进镜像即可。数据库挂卷持久化。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">适用行业</div>
+      <h2>凡是有「询单」的地方都适用</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">🛒</div><h3>跨境电商</h3><p>多语言访客、时差咨询、售后退换。WhatsApp/Email 渠道 + BSP 挂靠协助。</p></div>
+      <div class="card"><div class="icon">💻</div><h3>SaaS 与软件</h3><p>产品咨询、试用引导、工单前置分流。知识库承接高频问题。</p></div>
+      <div class="card"><div class="icon">🎓</div><h3>教育培训</h3><p>课程咨询、试听预约、学习伴侣系统的客服层。</p></div>
+      <div class="card"><div class="icon">🐾</div><h3>垂直电商</h3><p>宠物用品等长决策周期品类：选品咨询、养护知识库、复购跟进。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="cta-bar">
+      <h2>把导购机器人先跑起来</h2>
+      <p>三分钟：安装 → seed → serve，工作台和挂件同时就位。</p>
+      <a class="btn" href="pricing.html">查看价格</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>PASM Omni · 霖通</h4>
+        <p class="about">外接式客户系统内核。渠道即插即用，答不上来就转人工。
+        私有化交付，零第三方依赖。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="products.html">功能矩阵</a></li>
+          <li><a href="solutions.html">独立站智能导购</a></li>
+          <li><a href="ai-agents.html">AI 员工</a></li>
+          <li><a href="pricing.html">价格方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>资源</h4>
+        <ul>
+          <li><a href="resources.html">帮助文档</a></li>
+          <li><a href="resources.html#api">API 参考</a></li>
+          <li><a href="resources.html#security">安全与合规</a></li>
+          <li><a href="promotion.html">推广返现</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>生态</h4>
+        <ul>
+          <li><a href="https://github.com/arronJack/pasm-omni" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/arronzheng/pasm-omni" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="ai-agents.html#pasm">PASM 认知引擎</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 PASM 生态 · arronzheng</span>
+      <span>数据全部本地存储 · 单文件 SQLite · 可私有化部署</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

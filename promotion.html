@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>推广返现 · PASM Omni 霖通 —— 零门槛推荐官计划</title>
+<meta name="description" content="PASM Omni 推广返现计划：阶梯返佣 10%–30%，受邀客户 24 个月内续费仍按比例分成，单笔最高返佣上不封顶。推荐官四类权益、四步加入。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">霖</span>PASM Omni <small>霖通</small></a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="ai-agents.html">AI 员工</a>
+      <a href="promotion.html" class="on">推广返现</a>
+      <a href="pricing.html">价格</a>
+      <a href="resources.html">资源</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost sm" href="resources.html">文档</a>
+      <a class="btn sm" href="pricing.html">免费开始</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:52px 0 44px">
+  <div class="wrap">
+    <span class="kicker">推广返现</span>
+    <h1>零门槛成为 PASM Omni <em>推荐官</em></h1>
+    <p class="sub">每成功推荐一位付费客户，立得现金返佣；受邀客户 24 个月内续费，你依然按比例分成。
+    邀请无上限，返佣不封顶。</p>
+    <div class="cta">
+      <a class="btn" href="#join">立即加入</a>
+      <a class="btn ghost" href="#calc">算算我的收益</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 计算器 ============ -->
+<section class="block" style="padding-top:36px" id="calc">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">收益计算器</div>
+      <h2>输入两个数，看预计收益</h2>
+    </div>
+    <div class="calc">
+      <label>你预计推荐的付费客户数（人）</label>
+      <input type="number" id="cPeople" value="10" min="1" max="10000">
+      <label>客单价（元 / 年，按商业版团队版 ¥2,980 计）</label>
+      <input type="number" id="cPrice" value="2980" min="1">
+      <div class="out">
+        <div style="font-size:13px;color:var(--sub)">预计获得返佣（含 24 个月续费分成）</div>
+        <div class="big" id="cOut">¥0</div>
+        <div class="row">
+          <span>当前阶梯比例：<b id="cRate">10%</b></span>
+          <span>累计交易额：<b id="cTotal">¥0</b></span>
+          <span>其中续费分成：<b id="cRenew">¥0</b></span>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--sub);margin:12px 0 0">
+        * 金额仅供参考，具体以推广后台实际数据为准。阶梯比例按累计有效交易额自动进阶；
+        受邀客户 24 个月内每次续费，均按当时比例计佣。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 阶梯政策 ============ -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">返现政策</div>
+      <h2>阶梯式奖励，最高 30%</h2>
+      <p>推广奖励 = 有效订单交易金额 × 返现比例。默认 10% 起，累计交易额越高，比例越高。</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>累计有效交易额</th><th class="center">返现比例</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>默认</td><td class="center"><b style="color:var(--teal)">10%</b></td><td>注册即享，无门槛</td></tr>
+          <tr><td>≥ ¥5,000</td><td class="center"><b style="color:var(--teal)">15%</b></td><td>累计交易额达标后自动进阶</td></tr>
+          <tr><td>≥ ¥20,000</td><td class="center"><b style="color:var(--teal)">20%</b></td><td>—</td></tr>
+          <tr><td>≥ ¥50,000</td><td class="center"><b style="color:var(--teal)">25%</b></td><td>—</td></tr>
+          <tr><td>≥ ¥100,000</td><td class="center"><b style="color:var(--teal)">30%</b></td><td>顶格比例</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="good">
+      🔁 <b>续费也返：</b>受邀客户在 24 个月内的每一次续费，你都按当前比例获得分成——
+      一次推荐，长期收入。进阶条件：邀请的新付费客户数 ≥ 10 人后触发比例调整。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 谁能成为推荐官 ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">推荐官画像</div>
+      <h2>三类人都能加入</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🧑‍💻</div>
+        <h3>老客户 / 跨境从业者</h3>
+        <p>正在用 PASM Omni，在自己的社媒平台、行业社群、朋友圈分享真实使用体验。</p>
+      </div>
+      <div class="card">
+        <div class="icon">✍️</div>
+        <h3>内容创作者（KOL/KOC）</h3>
+        <p>能写作测评、发布教程视频。一次内容，长期带量——续费分成让内容资产持续变现。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>渠道合作伙伴</h3>
+        <p>手上有客户资源，成为渠道代理。批量推荐，阶梯比例自然进阶到 30%。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 四大优势 ============ -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">为什么值得推</div>
+      <h2>推荐计划的四个底气</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">💰</div><h3>高额持续返佣</h3><p>每笔新订阅 10%–30% 返佣，连续 24 个月续费仍分成，一次推荐长期收益。</p></div>
+      <div class="card"><div class="icon">🛡️</div><h3>产品真能打</h3><p>579 项守门测试全绿、零依赖可私有化、MCP 原生——推荐出去不砸自己招牌。</p></div>
+      <div class="card"><div class="icon">📚</div><h3>专属顾问支持</h3><p>提供推广素材、答疑与跟进，你只负责分享，其余我们来。</p></div>
+      <div class="card"><div class="icon">🌐</div><h3>关系网络复利</h3><p>加入即进入推荐官网络，客户资源互相引荐，收益渠道持续拓宽。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 四步流程 ============ -->
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="tag">开始推广</div>
+      <h2>四步，今天就能开始</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="no">1</div><h3>免费注册</h3><p>无需审核、零成本。留下联系方式即成为推荐官，领取专属推广链接与邀请码。</p></div>
+      <div class="step"><div class="no">2</div><h3>分享链接</h3><p>把专属链接分享给朋友、同事、业务伙伴、社群粉丝——任何有客服需求的团队。</p></div>
+      <div class="step"><div class="no">3</div><h3>订阅成功</h3><p>受邀客户付费下单，订单有效即计入返佣，后台实时可查推广数据。</p></div>
+      <div class="step"><div class="no">4</div><h3>申请提现</h3><p>佣金随时可申请提现，24 个月内的续费分成持续到账。</p></div>
+    </div>
+    <div class="center mt30">
+      <a class="btn" href="pricing.html">先了解产品再推广</a>
+      <a class="btn ghost" href="resources.html">索取推广资料包</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="block-head"><div class="tag">常见问题</div><h2>关于推广返现</h2></div>
+    <div class="faq">
+      <details open>
+        <summary>推广成功的标准是什么？</summary>
+        <div class="a">受邀客户通过你的专属链接注册并完成有效付费订单，即计为一次成功推荐。只注册未付费不计入。</div>
+      </details>
+      <details>
+        <summary>推荐官点击自己的推广链接下单，也能获得返现吗？</summary>
+        <div class="a">不可以。自推自购不计佣，该规则用于保护计划公平性，请勿尝试。</div>
+      </details>
+      <details>
+        <summary>推广数量有限制吗？</summary>
+        <div class="a">没有限制。邀请人数无上限，累计交易额不清零，返佣不封顶。</div>
+      </details>
+      <details>
+        <summary>如何追踪我的推广数据？</summary>
+        <div class="a">注册后进入推广后台，可查看点击、注册、付费转化与佣金明细，全部实时更新。</div>
+      </details>
+      <details>
+        <summary>佣金如何提现？</summary>
+        <div class="a">在推广后台申请提现，按流程办理。比例进阶与加速提现可联系你的推广经理人工处理。</div>
+      </details>
+      <details>
+        <summary>返佣范围包括哪些？</summary>
+        <div class="a">商业版订阅订单（团队版/企业版/定制版）均计入；附加组件（Email 代发、实施服务等）按订单实收金额计入。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="cta-bar">
+      <h2>成为推荐官，佣金无限翻</h2>
+      <p>零门槛、零成本、24 个月持续分成。</p>
+      <a class="btn" href="#join">立即免费加入</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>PASM Omni · 霖通</h4>
+        <p class="about">外接式客户系统内核。渠道即插即用，答不上来就转人工。
+        私有化交付，零第三方依赖。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="products.html">功能矩阵</a></li>
+          <li><a href="solutions.html">独立站智能导购</a></li>
+          <li><a href="ai-agents.html">AI 员工</a></li>
+          <li><a href="pricing.html">价格方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>资源</h4>
+        <ul>
+          <li><a href="resources.html">帮助文档</a></li>
+          <li><a href="resources.html#api">API 参考</a></li>
+          <li><a href="resources.html#security">安全与合规</a></li>
+          <li><a href="promotion.html">推广返现</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>生态</h4>
+        <ul>
+          <li><a href="https://github.com/arronJack/pasm-omni" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/arronzheng/pasm-omni" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="ai-agents.html#pasm">PASM 认知引擎</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 PASM 生态 · arronzheng</span>
+      <span>数据全部本地存储 · 单文件 SQLite · 可私有化部署</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var people = document.getElementById("cPeople");
+  var price = document.getElementById("cPrice");
+  var out = document.getElementById("cOut");
+  var rateEl = document.getElementById("cRate");
+  var totalEl = document.getElementById("cTotal");
+  var renewEl = document.getElementById("cRenew");
+
+  function fmt(n) {
+    return "¥" + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function rateOf(total) {
+    if (total >= 100000) return 0.30;
+    if (total >= 50000) return 0.25;
+    if (total >= 20000) return 0.20;
+    if (total >= 5000) return 0.15;
+    return 0.10;
+  }
+  function calc() {
+    var p = Math.max(1, parseInt(people.value || "1", 10));
+    var pr = Math.max(1, parseFloat(price.value || "1"));
+    var firstYear = p * pr;              // 首年交易额
+    var r1 = rateOf(firstYear);
+    var commission = firstYear * r1;
+    // 24 个月续费分成：假设 70% 客户续费 1 次（简化模型，仅供参考）
+    var renew = firstYear * 0.7 * r1;
+    out.textContent = fmt(commission + renew);
+    rateEl.textContent = Math.round(r1 * 100) + "%";
+    totalEl.textContent = fmt(firstYear);
+    renewEl.textContent = fmt(renew);
+  }
+  people.oninput = calc;
+  price.oninput = calc;
+  calc();
+})();
+</script>
+
+</body>
+</html>
