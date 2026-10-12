@@ -70,6 +70,7 @@
           <li><span class="doc">wecom</span> 配置 / 查看企业微信渠道（corpid / agentid / secret / token / aeskey）</li>
           <li><span class="doc">templates</span> 消息模板与审核态：list / add / submit / approve / reject / render</li>
           <li><span class="doc">orders</span> 订单打通：enable / list / lookup / add / stats</li>
+          <li><span class="doc">channel</span> 配置/查看可选渠道（line / feishu / dingtalk，密钥自动打码）</li>
                     <li><span class="doc">link-add / link-list</span> 分流链接（活码）管理</li>
         </ul>
       </div>
@@ -119,6 +120,9 @@
           <tr><td><code>POST /inbound/shopify</code></td><td>Shopify 订单 webhook（HMAC 验签）</td></tr>
           <tr><td><code>POST /inbound/woocommerce</code></td><td>WooCommerce 订单 webhook（HMAC 验签）</td></tr>
           <tr><td><code>POST /inbound/orders/{source}</code></td><td>通用订单 webhook（base64 或 hex 签名）</td></tr>
+          <tr><td><code>POST /inbound/line</code></td><td>Line webhook（HMAC 验签）</td></tr>
+          <tr><td><code>POST /inbound/feishu</code></td><td>飞书事件回调（URL 验证 / 明文 / AES 加密）</td></tr>
+          <tr><td><code>POST /inbound/dingtalk</code></td><td>钉钉机器人回调（加签校验）</td></tr>
           <tr><td><code>GET /api/orders</code></td><td>订单列表与统计（agent 级）</td></tr>
           <tr><td><code>GET /api/orders/lookup</code></td><td>按单号 / 客户查订单（agent 级）</td></tr>
           <tr><td><code>POST /api/orders</code></td><td>手动/ERP 写入订单（<b>仅 admin</b>）</td></tr>
@@ -129,6 +133,7 @@
           <tr><td><code>POST /api/track</code></td><td>访客轨迹上报（external_id 自动解析建档）</td></tr>
           <tr><td><code>GET /api/visitors</code></td><td>访客轨迹时间线</td></tr>
           <tr><td><code>GET /api/analytics</code></td><td>数据报表（应答率/首响/满意度/分布）</td></tr>
+          <tr><td><code>GET /api/analytics/trend</code></td><td>按天走势（工作台图表用，agent 级；days=1–90）</td></tr>
           <tr><td><code>GET /api/contacts</code></td><td>客户列表（按分层/标签筛选）</td></tr>
           <tr><td><code>POST /api/contact/tag|tier|untag</code></td><td>客户标签与分层管理</td></tr>
           <tr><td><code>GET /api/knowledge</code></td><td>知识库列表</td></tr>
@@ -251,7 +256,7 @@
         <div class="a">免费版与商业版都是：只用 Python 标准库（sqlite3 / http.server / hashlib / json），Python 3.11+ 即可运行。CI 里有静态扫描守门：包内任何顶层 import pasm 都会让测试失败。</div>
       </details>
       <details>
-        <summary>579 项守门测试是什么？</summary>
+        <summary>692 项守门测试是什么？</summary>
         <div class="a">四套自动化测试：端到端 46 项（渠道/状态机/闸门/审计）、大脑层 34 项（含 PASM 真实集成）、功能补强 37 项（本轮全部 bug 修复与新功能）、HTTP 层 48 项（真实服务全链路）。全部退出码 0。</div>
       </details>
       <details>
