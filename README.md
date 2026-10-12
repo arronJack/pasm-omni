@@ -114,9 +114,13 @@ promotion.html      —— 推广合作
 
 ## 联系
 
-- Gitee：<https://gitee.com/arronzheng>
-- GitHub：<https://github.com/arronJack>
-- 邮箱：625955122@qq.com
+| 平台 | 地址 |
+| --- | --- |
+| 官网 | <https://arronjack.github.io/pasm-omni/> |
+| GitHub | <https://github.com/arronJack/pasm-omni> |
+| Gitee | <https://gitee.com/arronzheng/pasm-omni> |
+| GitCode | <https://gitcode.com/arronzheng/pasm-omni> |
+| 邮箱 | 625955122@qq.com |
 
 ---
 
