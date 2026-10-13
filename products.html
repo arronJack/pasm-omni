@@ -187,53 +187,213 @@
 </footer>
 
 
-<!-- PASM Omni 客服接入挂件（参考 SaleSmartly 浮动客服） -->
+<!-- PASM Omni 客服接入挂件（打开即聊，参考 SaleSmartly 浮动客服） -->
 <div id="pasmCsWidget">
   <div id="pasmCsPanel" class="pasm-cs-panel" hidden>
     <div class="pasm-cs-head">
-      <div class="pasm-cs-title">PASM Omni · 客服接入</div>
+      <div>
+        <div class="pasm-cs-title">PASM Omni &middot; 在线客服</div>
+        <div class="pasm-cs-sub2" id="pasmCsMode">演示模式</div>
+      </div>
       <button id="pasmCsClose" class="pasm-cs-x" aria-label="关闭">&times;</button>
     </div>
-    <div class="pasm-cs-body">
-      <p class="pasm-cs-hi">您好 👋 欢迎了解 <b>PASM Omni 霖通</b>——外接式客户系统内核。</p>
-      <p class="pasm-cs-sub">渠道即插即用，答不上来就转人工；私有化交付，零第三方依赖。</p>
-      <div class="pasm-cs-links">
-        <a href="products.html">产品功能</a>
-        <a href="solutions.html">解决方案</a>
-        <a href="ai-agents.html">AI 员工</a>
-        <a href="pricing.html">价格方案</a>
-        <a href="resources.html">帮助文档</a>
-        <a href="promotion.html">联系开通</a>
-      </div>
-      <p class="pasm-cs-note">留下需求后，我们会在 1 个工作日内与您联系。</p>
+    <div class="pasm-cs-chat" id="pasmCsMsgs"></div>
+    <div class="pasm-cs-quick" id="pasmCsQuick"></div>
+    <div class="pasm-cs-inputrow">
+      <input id="pasmCsText" type="text" placeholder="输入消息，回车发送&hellip;" autocomplete="off">
+      <button id="pasmCsSend">发送</button>
     </div>
+    <div class="pasm-cs-foot">由 PASM Omni 霖通驱动 &middot; 私有化部署</div>
   </div>
-  <button id="pasmCsBtn" class="pasm-cs-btn" aria-label="客服接入">
+  <button id="pasmCsBtn" class="pasm-cs-btn" aria-label="在线客服">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
-    <span>客服接入</span>
+    <span>在线客服</span>
   </button>
 </div>
 <style>
-  #pasmCsWidget{position:fixed;right:22px;bottom:22px;z-index:9999;font-family:inherit}
+  #pasmCsWidget{position:fixed;right:22px;bottom:22px;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
   .pasm-cs-btn{display:flex;align-items:center;gap:8px;background:#0F6E56;color:#fff;border:none;border-radius:28px;padding:12px 18px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(15,110,86,.35);transition:transform .15s,box-shadow .15s}
   .pasm-cs-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(15,110,86,.45)}
-  .pasm-cs-panel{position:absolute;right:0;bottom:66px;width:320px;max-height:460px;overflow:auto;background:#fff;border:1px solid #e6e8eb;border-radius:16px;box-shadow:0 16px 48px rgba(17,24,39,.18)}
-  .pasm-cs-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#0F6E56;color:#fff;border-radius:16px 16px 0 0}
+  .pasm-cs-panel{position:absolute;right:0;bottom:66px;width:344px;max-width:92vw;height:470px;max-height:78vh;display:flex;flex-direction:column;background:#fff;border:1px solid #e6e8eb;border-radius:16px;box-shadow:0 16px 48px rgba(17,24,39,.18);overflow:hidden}
+  .pasm-cs-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0F6E56;color:#fff}
   .pasm-cs-title{font-weight:700;font-size:15px}
+  .pasm-cs-sub2{font-size:11px;opacity:.85;margin-top:2px}
   .pasm-cs-x{background:none;border:none;color:#fff;font-size:22px;line-height:1;cursor:pointer}
-  .pasm-cs-body{padding:16px}
-  .pasm-cs-hi{margin:0 0 6px;font-size:14px;color:#111}
-  .pasm-cs-sub{margin:0 0 14px;font-size:13px;color:#5b6470;line-height:1.6}
-  .pasm-cs-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .pasm-cs-links a{display:block;text-align:center;padding:9px 6px;background:#f3f6f5;border-radius:10px;color:#0F6E56;text-decoration:none;font-size:13px;font-weight:600}
-  .pasm-cs-links a:hover{background:#e3efe9}
-  .pasm-cs-note{margin:14px 0 0;font-size:12px;color:#8a929c}
+  .pasm-cs-chat{flex:1;overflow-y:auto;padding:14px;background:#f7f8f9;display:flex;flex-direction:column;gap:10px}
+  .pcs-b{max-width:82%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+  .pcs-c{align-self:flex-end;background:#0F6E56;color:#fff;border-bottom-right-radius:4px}
+  .pcs-a{align-self:flex-start;background:#fff;border:1px solid #e5e7eb;border-bottom-left-radius:4px}
+  .pcs-s{align-self:center;font-size:11px;color:#8a929c;background:#eef0f2;padding:4px 10px;border-radius:10px}
+  .pcs-typing{align-self:flex-start;font-size:12px;color:#8a929c;padding:4px 10px}
+  .pasm-cs-quick{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px 0;border-top:1px solid #f0f1f3;background:#fff}
+  .pasm-cs-quick button{border:1px solid #d7e3dd;background:#f3f6f5;color:#0F6E56;border-radius:14px;padding:5px 10px;font-size:12px;cursor:pointer}
+  .pasm-cs-quick button:hover{background:#e3efe9}
+  .pasm-cs-inputrow{display:flex;gap:8px;padding:10px 12px;background:#fff}
+  .pasm-cs-inputrow input{flex:1;border:1px solid #d1d5db;border-radius:8px;padding:8px 10px;font-size:14px;font-family:inherit;outline:none}
+  .pasm-cs-inputrow input:focus{border-color:#0F6E56}
+  .pasm-cs-inputrow button{background:#0F6E56;color:#fff;border:none;border-radius:8px;padding:0 16px;font-size:14px;cursor:pointer;white-space:nowrap}
+  .pasm-cs-inputrow button:disabled{background:#b0b7c3;cursor:not-allowed}
+  .pasm-cs-foot{padding:0 12px 10px;font-size:11px;color:#aab0b8;background:#fff;text-align:center}
   [hidden]{display:none!important}
-  @media(max-width:520px){#pasmCsWidget{right:14px;bottom:14px}.pasm-cs-panel{width:280px}}
+  @media(max-width:520px){#pasmCsWidget{right:14px;bottom:14px}.pasm-cs-panel{width:300px;height:420px}}
 </style>
 <script>
-(function(){var b=document.getElementById('pasmCsBtn'),p=document.getElementById('pasmCsPanel'),x=document.getElementById('pasmCsClose');if(b){b.onclick=function(){p.hidden=!p.hidden};if(x){x.onclick=function(){p.hidden=true}}}}());
-</script>
+(function () {
+  // ===== 接入配置：部署 pasm-omni 服务后，把地址填在这里即变为真实客服 =====
+  var PASM_API = ""; // 例如 "https://omni.example.com"（留空 = 演示模式）
+  var btn = document.getElementById("pasmCsBtn"),
+      panel = document.getElementById("pasmCsPanel"),
+      x = document.getElementById("pasmCsClose"),
+      box = document.getElementById("pasmCsMsgs"),
+      quick = document.getElementById("pasmCsQuick"),
+      input = document.getElementById("pasmCsText"),
+      send = document.getElementById("pasmCsSend"),
+      mode = document.getElementById("pasmCsMode");
+  if (!btn) return;
 
-</body>
+  // 访客身份：localStorage 记住，避免每次刷新都是新客户
+  var KEY = "pasm_omni_visitor";
+  var visitor;
+  try { visitor = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+  if (!visitor) {
+    visitor = { id: "v" + Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4) };
+    try { localStorage.setItem(KEY, JSON.stringify(visitor)); } catch (e) {}
+  }
+
+  var sending = false, greeted = false;
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+  function bubble(text, who) {
+    var d = document.createElement("div");
+    d.className = "pcs-b pcs-" + who;
+    d.textContent = text;
+    box.appendChild(d);
+    box.scrollTop = 1e9;
+    return d;
+  }
+  function notice(text) {
+    var d = document.createElement("div");
+    d.className = "pcs-s";
+    d.textContent = text;
+    box.appendChild(d);
+    box.scrollTop = 1e9;
+  }
+  function typingOn() {
+    var d = document.createElement("div");
+    d.className = "pcs-typing";
+    d.textContent = "对方正在输入…";
+    box.appendChild(d);
+    box.scrollTop = 1e9;
+    return d;
+  }
+
+  // ===== 常见问题快选 =====
+  var QUICK = [
+    "价格是多少？",
+    "支持哪些渠道？",
+    "怎么私有化部署？",
+    "AI 会不会乱答？",
+    "转人工"
+  ];
+  QUICK.forEach(function (q) {
+    var b = document.createElement("button");
+    b.textContent = q;
+    b.onclick = function () { input.value = q; doSend(); };
+    quick.appendChild(b);
+  });
+
+  // ===== 演示模式 FAQ（本地应答，不经过网络；真实模式由服务端大脑应答） =====
+  var FAQ = [
+    { k: ["价格", "多少钱", "费用", "收费", "版本"], a: "PASM Omni 价格：\n· 免费版（自托管）¥0\n· 团队版 ¥148/年\n· 企业版 ¥1,880/年\n详见价格页：<a href='pricing.html' style='color:#0F6E56'>pricing.html</a>（当前为演示模式，配置 API 地址后由真实系统应答）" },
+    { k: ["渠道", "接入", "微信", "企微", "飞书", "钉钉", "telegram", "email", "line"], a: "内置 8 个渠道：webchat 网页挂件、Email、Telegram、Passthrough、企业微信、Line、飞书、钉钉。挂件一行 <script> 即可嵌入任何站点，访客打开就能聊。" },
+    { k: ["部署", "私有化", "安装", "自托管", "依赖"], a: "纯 Python 标准库实现（sqlite3/http.server/hashlib/json），Python 3.11+ 即可运行，SQLite 单文件存储，数据不出自己的机器。\n启动：python -m pasm_omni.cli serve --port 8770" },
+    { k: ["乱答", "幻觉", "准确", "靠谱", "答错"], a: "两层保险：① 反幻觉相关性闸门——知识库够不着就明说答不上来，不编造；② 确定性规则引擎——关键词/条件命中的答复不经过大模型，不可能幻觉。" },
+    { k: ["人工", "转人工", "坐席"], a: "演示模式无法真正转人工。真实部署后：识别到客诉/高危/规则命中即自动转人工，坐席在工作台接管，会话全程留痕。" },
+    { k: ["试用", "测试", "demo"], a: "可以。免费版支持完整自托管；需要实施服务或定制可联系我们（页面底部有联系方式）。" }
+  ];
+
+  function demoAnswer(text) {
+    var t = text.toLowerCase();
+    for (var i = 0; i < FAQ.length; i++) {
+      for (var j = 0; j < FAQ[i].k.length; j++) {
+        if (t.indexOf(FAQ[i].k[j]) >= 0) return FAQ[i].a;
+      }
+    }
+    return "这里是演示应答 🦉\n真实部署后，这个问题会由 PASM Omni 的客服系统回答：先查知识库（反幻觉闸门把关），答不上来会转人工。\n想了解价格、渠道或部署方式，可以点下面的常见问题。";
+  }
+
+  function doSend() {
+    var text = (input.value || "").trim();
+    if (!text || sending) return;
+    sending = true;
+    send.disabled = true;
+    bubble(text, "c");
+    input.value = "";
+    var tp = typingOn();
+
+    function done() {
+      if (tp && tp.parentNode) tp.parentNode.removeChild(tp);
+      sending = false;
+      send.disabled = false;
+      input.focus();
+    }
+
+    if (PASM_API) {
+      // ===== 真实模式：与官方 widget.js 同协议 =====
+      fetch(PASM_API + "/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ channel: "webchat", external_id: visitor.id, text: text })
+      }).then(function (r) { return r.json(); }).then(function (r) {
+        done();
+        if (r && r.reply) {
+          bubble(r.reply, "a");
+          if (r.action === "handoff") notice("已转人工，坐席稍后回复");
+        } else if (r && r.error) {
+          notice("发送失败：" + r.error);
+        } else {
+          notice("服务未返回应答，请稍后重试");
+        }
+      }).catch(function () {
+        done();
+        notice("网络异常：服务暂不可达（演示模式下仅本地应答）");
+      });
+    } else {
+      // ===== 演示模式：本地 FAQ =====
+      setTimeout(function () {
+        done();
+        var a = demoAnswer(text);
+        var d = document.createElement("div");
+        d.className = "pcs-b pcs-a";
+        d.innerHTML = esc(a).replace(/\n/g, "<br>").replace(
+          /&lt;a href='([^']+)' style='color:#0F6E56'&gt;([^&]+)&lt;\/a&gt;/g,
+          "<a href='$1' style='color:#0F6E56'>$2</a>");
+        box.appendChild(d);
+        box.scrollTop = 1e9;
+      }, 450);
+    }
+  }
+
+  btn.onclick = function () {
+    panel.hidden = !panel.hidden;
+    if (!panel.hidden) {
+      if (!greeted) {
+        greeted = true;
+        bubble("您好 👋 欢迎了解 PASM Omni 霖通——外接式客户系统内核。\n有什么可以帮您？", "a");
+        mode.textContent = PASM_API ? "在线" : "演示模式";
+      }
+      input.focus();
+    }
+  };
+  if (x) x.onclick = function () { panel.hidden = true; };
+  send.onclick = doSend;
+  input.onkeydown = function (e) {
+    if (e.key === "Enter") { e.preventDefault(); doSend(); }
+  };
+})();
+</script></body>
 </html>
