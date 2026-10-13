@@ -276,5 +276,54 @@
   </div>
 </footer>
 
+
+<!-- PASM Omni 客服接入挂件（参考 SaleSmartly 浮动客服） -->
+<div id="pasmCsWidget">
+  <div id="pasmCsPanel" class="pasm-cs-panel" hidden>
+    <div class="pasm-cs-head">
+      <div class="pasm-cs-title">PASM Omni · 客服接入</div>
+      <button id="pasmCsClose" class="pasm-cs-x" aria-label="关闭">&times;</button>
+    </div>
+    <div class="pasm-cs-body">
+      <p class="pasm-cs-hi">您好 👋 欢迎了解 <b>PASM Omni 霖通</b>——外接式客户系统内核。</p>
+      <p class="pasm-cs-sub">渠道即插即用，答不上来就转人工；私有化交付，零第三方依赖。</p>
+      <div class="pasm-cs-links">
+        <a href="products.html">产品功能</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="ai-agents.html">AI 员工</a>
+        <a href="pricing.html">价格方案</a>
+        <a href="resources.html">帮助文档</a>
+        <a href="promotion.html">联系开通</a>
+      </div>
+      <p class="pasm-cs-note">留下需求后，我们会在 1 个工作日内与您联系。</p>
+    </div>
+  </div>
+  <button id="pasmCsBtn" class="pasm-cs-btn" aria-label="客服接入">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+    <span>客服接入</span>
+  </button>
+</div>
+<style>
+  #pasmCsWidget{position:fixed;right:22px;bottom:22px;z-index:9999;font-family:inherit}
+  .pasm-cs-btn{display:flex;align-items:center;gap:8px;background:#0F6E56;color:#fff;border:none;border-radius:28px;padding:12px 18px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(15,110,86,.35);transition:transform .15s,box-shadow .15s}
+  .pasm-cs-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(15,110,86,.45)}
+  .pasm-cs-panel{position:absolute;right:0;bottom:66px;width:320px;max-height:460px;overflow:auto;background:#fff;border:1px solid #e6e8eb;border-radius:16px;box-shadow:0 16px 48px rgba(17,24,39,.18)}
+  .pasm-cs-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#0F6E56;color:#fff;border-radius:16px 16px 0 0}
+  .pasm-cs-title{font-weight:700;font-size:15px}
+  .pasm-cs-x{background:none;border:none;color:#fff;font-size:22px;line-height:1;cursor:pointer}
+  .pasm-cs-body{padding:16px}
+  .pasm-cs-hi{margin:0 0 6px;font-size:14px;color:#111}
+  .pasm-cs-sub{margin:0 0 14px;font-size:13px;color:#5b6470;line-height:1.6}
+  .pasm-cs-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .pasm-cs-links a{display:block;text-align:center;padding:9px 6px;background:#f3f6f5;border-radius:10px;color:#0F6E56;text-decoration:none;font-size:13px;font-weight:600}
+  .pasm-cs-links a:hover{background:#e3efe9}
+  .pasm-cs-note{margin:14px 0 0;font-size:12px;color:#8a929c}
+  [hidden]{display:none!important}
+  @media(max-width:520px){#pasmCsWidget{right:14px;bottom:14px}.pasm-cs-panel{width:280px}}
+</style>
+<script>
+(function(){var b=document.getElementById('pasmCsBtn'),p=document.getElementById('pasmCsPanel'),x=document.getElementById('pasmCsClose');if(b){b.onclick=function(){p.hidden=!p.hidden};if(x){x.onclick=function(){p.hidden=true}}}}());
+</script>
+
 </body>
 </html>
